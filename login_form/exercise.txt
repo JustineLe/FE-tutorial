@@ -1,0 +1,3 @@
+<!-- step1: vẽ 1 form có input username và password sau đó sử dụng js để lấy thông tin trong form khi click submit -->
+<!-- step2: sau khi submit -> hiển thị thông báo ra màn hình (1 dòng text thông báo)  -->
+<!-- sử dụng 1 thẻ div kèm theo id để bọc form -> sau khi submit thì thay đổi html bên trong thẻ div đó -->
