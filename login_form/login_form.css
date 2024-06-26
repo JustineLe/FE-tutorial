@@ -6,3 +6,13 @@ h1, #login {
 div {
     margin: 0.5rem;
 }
+
+#form_submit_success {
+    background-color: green;
+    color: white;
+}
+
+#form_missing_username, #form_missing_password {
+    background-color: red;
+    color: white;
+}
