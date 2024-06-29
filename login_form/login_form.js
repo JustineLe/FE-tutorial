@@ -11,24 +11,41 @@ form.addEventListener("submit", (e) => {
   
     let username = document.getElementById("username");
     let password = document.getElementById("password");
+
+    let form_missing_username = document.getElementById("form_missing_username");
+    let form_missing_password = document.getElementById("form_missing_password");
+    let form_success_item = document.getElementById("form_submit_success");
   
-    if (username.value == "") {
-      document.getElementById("form_missing_username").removeAttribute("hidden")
+    if (username.value === "") {
+      form_missing_username.removeAttribute("hidden");
 
-      let form_missing_item = document.getElementById("form_missing_password")
-      if (!(form_missing_item.hasAttribute('hidden'))) {
-        form_missing_item.setAttribute("hidden")
+      if (!(form_missing_password.hasAttribute('hidden'))) {
+        form_missing_password.setAttribute("hidden", true);
       }
 
-      let form_success_item = document.getElementById("form_submit_success")
       if (!(form_success_item.hasAttribute('hidden'))) {
-        form_success_item.setAttribute("hidden")
+        form_success_item.setAttribute("hidden", true);
       }
-    } else if (password.value == "") {
-      document.getElementById("form_missing_password").removeAttribute("hidden")
-    } else {
-      document.getElementById("form_submit_success").removeAttribute("hidden")
+    } else if (password.value === "") {
+      form_missing_password.removeAttribute("hidden");
 
+      if (!(form_missing_username.hasAttribute('hidden'))) {
+        form_missing_username.setAttribute('hidden', true);
+      }
+
+      if (!(form_success_item.hasAttribute('hidden'))) {
+        form_success_item.setAttribute("hidden", true);
+      }
+    } else {
+      form_success_item.removeAttribute("hidden");
+
+      if (!(form_missing_username.hasAttribute('hidden'))) {
+        form_missing_username.setAttribute('hidden', true);
+      }
+
+      if (!(form_missing_password.hasAttribute('hidden'))) {
+        form_missing_password.setAttribute("hidden", true);
+      }
       setTimeout(myGreeting(username.value), 5000);
     }
   });
