@@ -9,16 +9,43 @@ function myGreeting(username) {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
   
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-  
-    if (username.value == "") {
-      document.getElementById("form_missing_username").removeAttribute("hidden")
-    } else if (password.value == "") {
-      document.getElementById("form_missing_password").removeAttribute("hidden")
-    } else {
-      document.getElementById("form_submit_success").removeAttribute("hidden")
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
 
-      setTimeout(myGreeting(username), 5000);
+    let form_missing_username = document.getElementById("form_missing_username");
+    let form_missing_password = document.getElementById("form_missing_password");
+    let form_success_item = document.getElementById("form_submit_success");
+  
+    if (username.value === "") {
+      form_missing_username.removeAttribute("hidden");
+
+      if (!(form_missing_password.hasAttribute('hidden'))) {
+        form_missing_password.setAttribute("hidden", true);
+      }
+
+      if (!(form_success_item.hasAttribute('hidden'))) {
+        form_success_item.setAttribute("hidden", true);
+      }
+    } else if (password.value === "") {
+      form_missing_password.removeAttribute("hidden");
+
+      if (!(form_missing_username.hasAttribute('hidden'))) {
+        form_missing_username.setAttribute('hidden', true);
+      }
+
+      if (!(form_success_item.hasAttribute('hidden'))) {
+        form_success_item.setAttribute("hidden", true);
+      }
+    } else {
+      form_success_item.removeAttribute("hidden");
+
+      if (!(form_missing_username.hasAttribute('hidden'))) {
+        form_missing_username.setAttribute('hidden', true);
+      }
+
+      if (!(form_missing_password.hasAttribute('hidden'))) {
+        form_missing_password.setAttribute("hidden", true);
+      }
+      setTimeout(myGreeting(username.value), 5000);
     }
   });
