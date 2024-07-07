@@ -1,5 +1,0 @@
-1. Vẽ 1 form có 2 input username và password sau đó sử dụng Javacsript để lấy giá trị của username và password trong form khi click button submit
-2. Sau khi submit -> hiển thị thông báo ra màn hình (1 dòng text thông báo)
-3. Validate thông tin nhập vào form (không có username -> báo lỗi username, không có password -> báo lỗi password)
-4. Thêm style lỗi và thành công
-5. Sử dụng setTimeout để sau khi login thành công thì hiển thị dòng text Welcome to NonTechLearning class, "username"
