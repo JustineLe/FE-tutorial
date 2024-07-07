@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="notes.js"></script>
+    <link rel="stylesheet" href="notes.css">
+    <title>Notes</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Notes: </label>
+            <input id="input-note" type="text" placeholder="Enter note here">
+        </div>
+        <div>
+            <button id="button-session" type="button" onclick="onAddTemporaryNotes();">Add to temporary jobs</button>
+            <button id="button-local" type="button" onclick="onAddPermanentNotes();">Add to permanent jobs</button>
+        </div>
+    </form>
+
+    <div id="container">
+        <div id="container-temporary" hidden>
+            List temporary jobs:
+            <ul id="list-temporary"></ul>
+        </div>
+
+        <div id="container-permanent" hidden>
+            List permanent jobs:
+            <ul id="list-permanent"></ul>
+        </div>
+    </div>
+</body>
+</html>
