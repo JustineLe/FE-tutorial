@@ -1,0 +1,19 @@
+Tạo ứng dụng quản lý ghi chú đơn giản
+Yêu cầu
+1. Giao diện người dùng:
+  a. Một ô nhập liệu (input) để người dùng nhập ghi chú.
+  b. Hai nút (button): Một nút để lưu ghi chú vào localStorage và một nút để lưu ghi chú vào sessionStorage.
+  c. Một danh sách hiển thị các ghi chú đã lưu từ cả localStorage và sessionStorage.
+2. Chức năng:
+  a. Khi người dùng nhập ghi chú và nhấn nút lưu, ghi chú đó sẽ được lưu vào localStorage hoặc sessionStorage tùy theo nút mà họ nhấn.
+  b. Ghi chú đã lưu sẽ được hiển thị trong danh sách tương ứng.
+  c. Khi tải lại trang, ghi chú từ localStorage sẽ vẫn còn, nhưng ghi chú từ sessionStorage sẽ bị mất.
+3. Gợi ý:
+  a. Sử dụng:
+   window.addEventListener("load", function (event) {
+     // thực hiện khi toàn bộ tài nguyên(css, js, img, ...) của trang được tải lên
+     displayNotes();
+  });  
+  b. Sử dụng localStorage.setItem(key, value) và sessionStorage.setItem(key, value) để lưu ghi chú.
+  c. Sử dụng localStorage.getItem(key) và sessionStorage.getItem(key) để lấy ghi chú.
+  d. Sử dụng localStorage.removeItem(key) và sessionStorage.removeItem(key) để xóa ghi chú.
